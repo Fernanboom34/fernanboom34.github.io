@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luma · Launcher de Minecraft Java para Windows</title>
+<meta name="description" content="Luma crea y organiza tus instancias de Minecraft Java con Fabric, Forge y NeoForge, e instala mods desde Modrinth.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌙%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#">Luma</a>
+    <nav aria-label="Principal">
+      <a href="#capturas">Capturas</a>
+      <a href="#instalar">Instalar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Todas tus instancias de Minecraft, en un solo lugar.</h1>
+        <p class="lead">Luma es un launcher para Minecraft Java en Windows. Crea instancias con Fabric, Forge o NeoForge, instala mods desde Modrinth y entra al juego en segundos.</p>
+        <div class="cta">
+          <a class="btn" id="descargar" href="https://github.com/Fernanboom34/Launcher/releases/latest/download/Luma-Setup.exe">Descargar para Windows</a>
+          <span class="meta" id="version">Última versión estable</span>
+        </div>
+        <p class="fine">Windows 10 o superior, 64 bits. Juega con un perfil local o con tu cuenta Microsoft. Windows puede mostrar un aviso al abrir el instalador: <a href="#instalar">te explicamos por qué</a>.</p>
+      </div>
+      <div class="moon" role="img" aria-label="Luna creciente, el símbolo de Luma"></div>
+    </section>
+
+    <section aria-labelledby="t-funciones">
+      <h2 id="t-funciones">Lo que hace Luma</h2>
+      <dl>
+        <div><dt>Instancias separadas</dt><dd>Cada instancia tiene sus propios mods, mundos y ajustes. Duplícala, renómbrala o bórrala sin tocar las demás.</dd></div>
+        <div><dt>Fabric, Forge y NeoForge</dt><dd>Elige el loader y la versión de Minecraft al crear la instancia. Luma descarga Java y todo lo que falte.</dd></div>
+        <div><dt>Mods desde Modrinth</dt><dd>Busca e instala mods, resource packs y shaders dentro de Luma. Las dependencias obligatorias se añaden solas y cada archivo se verifica.</dd></div>
+        <div><dt>Juega sin conexión</dt><dd>Una vez instalada una versión, puedes abrirla sin internet. Tus mundos y tu configuración se quedan en tu equipo.</dd></div>
+      </dl>
+    </section>
+
+    <section id="capturas" aria-labelledby="t-capturas">
+      <h2 id="t-capturas">Así se ve</h2>
+      <div class="shots">
+        <figure><div class="shot"><span>Captura pendiente<br>assets/biblioteca.png</span><img src="assets/biblioteca.png" alt="Biblioteca de instancias de Luma" onerror="this.remove()"></div><figcaption>Tu biblioteca de instancias</figcaption></figure>
+        <figure><div class="shot"><span>Captura pendiente<br>assets/instancia.png</span><img src="assets/instancia.png" alt="Página de una instancia con su contenido" onerror="this.remove()"></div><figcaption>Mods y archivos de una instancia</figcaption></figure>
+        <figure><div class="shot"><span>Captura pendiente<br>assets/catalogo.png</span><img src="assets/catalogo.png" alt="Catálogo de Modrinth dentro de Luma" onerror="this.remove()"></div><figcaption>Catálogo de Modrinth integrado</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="instalar" aria-labelledby="t-instalar">
+      <h2 id="t-instalar">Cómo instalarlo</h2>
+      <ol>
+        <li>Descarga <strong>Luma-Setup.exe</strong> con el botón de arriba y ábrelo.</li>
+        <li>Si Windows muestra <em>Windows protegió su PC</em>, pulsa <strong>Más información</strong> y luego <strong>Ejecutar de todas formas</strong>.</li>
+        <li>Acepta el permiso de administrador. El instalador copia Luma a Program Files.</li>
+      </ol>
+      <p class="fine">Ese aviso aparece porque las versiones de Luma todavía no tienen firma de editor público. Windows lo muestra con cualquier programa nuevo, y no significa por sí solo que el archivo sea peligroso. Descarga siempre desde esta página o desde el <a href="https://github.com/Fernanboom34/Launcher/releases/latest">release oficial</a>.</p>
+      <p class="fine">Para comprobar que tu archivo es el publicado, calcula su hash en PowerShell y compáralo con <a href="https://github.com/Fernanboom34/Launcher/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>:</p>
+      <pre><code>Get-FileHash -Algorithm SHA256 .\Luma-Setup.exe</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="https://github.com/Fernanboom34/Launcher">Código en GitHub</a> · <a href="https://github.com/Fernanboom34/Launcher/releases/latest">Novedades de la versión</a></p>
+    <p>Proyecto independiente, sin afiliación con Mojang ni Microsoft. Minecraft es una marca de sus respectivos titulares.</p>
+  </footer>
+</div>
+</body>
+</html>
