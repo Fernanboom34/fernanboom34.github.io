@@ -61,3 +61,15 @@ h3{font-size:1.15rem;margin:1.5rem 0 .8rem}
 .shots .game-capture{display:block;position:relative;aspect-ratio:1360/880;overflow:hidden;border:1px solid var(--linea);border-radius:.7rem}
 .shots .game-capture img{position:absolute;width:117.647059%;max-width:none;height:auto;left:-7.352941%;top:-4.545455%;border:0;border-radius:0;transition:none}
 .shots .game-capture:hover img{transform:none}
+
+.support{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:2.5rem;align-items:center}
+.support-intro{padding-top:0}
+.support-intro h2{margin-bottom:1.5rem}
+.support-intro p:not(.eyebrow){color:var(--plata)}
+.support-embed{min-width:0;overflow:hidden;border-radius:.8rem;background:#f9f9f9;border:1px solid var(--linea)}
+.support-embed iframe{display:block;border:0;width:100%;padding:4px;background:#f9f9f9}
+.support-widget{margin-top:1.5rem}
+.support-widget .kofi-button{box-shadow:none!important;border-radius:.6rem!important}
+@media(max-width:760px){.support{grid-template-columns:minmax(0,1fr);gap:2rem;padding:1.25rem}.support-intro{padding-top:0}}
+.support-widget .kofitext{color:var(--tinta)!important;text-shadow:none}
+@media(prefers-reduced-motion:reduce){.support-widget .kofiimg{animation:none!important}}
