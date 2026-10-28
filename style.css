@@ -74,11 +74,9 @@ h3{font-size:1.15rem;margin:1.5rem 0 .8rem}
 
 /* Navegación compartida del sitio. */
 nav a[aria-current="page"]{color:var(--menta);text-decoration:underline;text-underline-offset:.5rem}
-.skip-link{position:absolute;top:.5rem;left:.5rem;z-index:10;transform:translateY(-200%);background:var(--panel);padding:.75rem 1rem}
-.skip-link:focus{transform:translateY(0)}
 main>section:first-child{border-top:0}
 main>section>h1{margin-bottom:1.8rem}
-.page-cta{margin:1.5rem 0}
+.page-cta{margin:2rem 0 1.5rem}
 .site-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
 .site-cards>a{display:block;background:var(--panel);border:1px solid var(--linea);border-radius:.8rem;padding:1.5rem;text-decoration:none}
 .site-cards>a:hover{border-color:var(--menta)}

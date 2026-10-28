@@ -1,6 +1,5 @@
 'use strict';
 const API = 'https://api.github.com/repos/Fernanboom34/Launcher/releases';
-const RELEASES = 'https://github.com/Fernanboom34/Launcher/releases';
 const button = document.getElementById('descargar');
 const version = document.getElementById('version');
 const status = document.getElementById('estado-descargas');
@@ -68,7 +67,7 @@ async function loadLatest() {
     document.getElementById('compatibilidad').textContent = preferred ? `${kind(preferred).label}. Puedes elegir otro formato en Otras descargas.` : 'Disponible para Windows x64 y Linux x64. Si usas macOS, móvil o ARM, no hay un paquete compatible publicado.';
     version.textContent = `Versión estable ${release.tag_name.replace(/^v/, '')}`;
   } catch {
-    version.textContent = 'Consulta la última versión estable en GitHub';
+    version.textContent = 'Elige un archivo en Descargas';
     const container = document.getElementById('descargas-estables');
     if (container) container.textContent = 'No se pudieron consultar los archivos. Usa el enlace a los releases oficiales.';
   }
