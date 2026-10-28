@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luma · Launcher gratuito para perfiles offline</title>
-<meta name="description" content="Página oficial y original de Luma: launcher gratuito para perfiles offline de Minecraft Java en Windows y Linux. Proyecto independiente, sin afiliación con Mojang ni Microsoft.">
+<meta name="description" content="Página oficial y original de Luma: launcher gratuito para perfiles offline de Minecraft Java en Windows y Linux.">
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://fernanboom34.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌙%3C/text%3E%3C/svg%3E">
@@ -12,18 +12,19 @@
 <script src="app.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header>
-    <a class="brand" href="#">Luma</a>
+    <a class="brand" href="index.html" aria-label="Luma, inicio">Luma</a>
     <nav aria-label="Principal">
-      <a href="#capturas">Capturas</a>
-      <a href="#descargas">Otras descargas</a>
-      <a href="#instalar">Instalar</a>
-      <a href="#apoyar">Apoyar</a>
+      <a href="index.html" aria-current="page">Inicio</a>
+      <a href="descargas.html">Descargas</a>
+      <a href="capturas.html">Capturas</a>
+      <a href="ayuda.html">Ayuda</a>
+      <a href="apoyar.html">Apoyar</a>
     </nav>
   </header>
-
-  <main>
+  <main id="contenido">
     <section class="hero">
       <div>
         <p class="eyebrow">Única página oficial y original de Luma</p>
@@ -33,12 +34,11 @@
           <a class="btn" id="descargar" href="https://github.com/Fernanboom34/Launcher/releases/latest">Elegir descarga</a>
           <span class="meta" id="version">Última versión estable</span>
         </div>
-        <p class="fine" id="compatibilidad">Windows x64 y Linux x64. Elige tu sistema en <a href="#descargas">Otras descargas</a>.</p>
+        <p class="fine" id="compatibilidad">Windows x64 y Linux x64. Elige tu sistema en <a href="descargas.html">Otras descargas</a>.</p>
         <p class="fine">Gratuito y para perfiles offline. Proyecto independiente, sin afiliación con Mojang ni Microsoft.</p>
       </div>
       <div class="moon" role="img" aria-label="Luna creciente, el símbolo de Luma"></div>
     </section>
-
     <section aria-labelledby="t-funciones">
       <h2 id="t-funciones">Lo que hace Luma</h2>
       <dl>
@@ -48,70 +48,19 @@
         <div><dt>Juega sin conexión</dt><dd>Una vez instalada una versión, puedes abrirla sin internet. Tus mundos y tu configuración se quedan en tu equipo.</dd></div>
       </dl>
     </section>
-
-    <section id="capturas" aria-labelledby="t-capturas">
-      <h2 id="t-capturas">Luma en acción</h2>
-      <div class="shots">
-        <figure><a href="assets/inicio.png"><img loading="lazy" src="assets/inicio.png" alt="Página de inicio de Luma" width="1360" height="880"></a><figcaption>Tu biblioteca, de un vistazo</figcaption></figure>
-        <figure><a href="assets/vacia.png"><img loading="lazy" src="assets/vacia.png" alt="Instancia vacía de Luma" width="1360" height="880"></a><figcaption>Una instancia lista para personalizar</figcaption></figure>
-        <figure><a href="assets/mods.png"><img loading="lazy" src="assets/mods.png" alt="Instancia de Luma con unos pocos mods de ejemplo" width="1360" height="880"></a><figcaption>Contenido de una instancia</figcaption></figure>
-        <figure><a href="assets/crear-vanilla.png"><img loading="lazy" src="assets/crear-vanilla.png" alt="Creación de una instancia Vanilla" width="1360" height="880"></a><figcaption>Vista de creación para instancia de Vanilla</figcaption></figure>
-        <figure><a href="assets/crear-fabric.png"><img loading="lazy" src="assets/crear-fabric.png" alt="Creación de una instancia Fabric" width="1360" height="880"></a><figcaption>Vista de creación para instancia de Fabric</figcaption></figure>
-        <figure><a href="assets/crear-forge.png"><img loading="lazy" src="assets/crear-forge.png" alt="Creación de una instancia Forge" width="1360" height="880"></a><figcaption>Vista de creación para instancia de Forge</figcaption></figure>
-        <figure><a href="assets/crear-neoforge.png"><img loading="lazy" src="assets/crear-neoforge.png" alt="Creación de una instancia NeoForge" width="1360" height="880"></a><figcaption>NeoVista de creación para instancia de Forge</figcaption></figure>
-        <figure><a class="game-capture" href="assets/jugando.png"><img loading="lazy" src="assets/jugando.png" alt="Menú principal real de Minecraft 1.7.10 con Luma visible al fondo" width="1600" height="1000"></a><figcaption>Minecraft en marcha</figcaption></figure>
-      </div>
-      <p class="fine">Capturas de la interfaz de Luma.</p>
-    </section>
-
-    <section id="descargas" aria-labelledby="t-descargas">
-      <h2 id="t-descargas">Otras descargas</h2>
-      <p>Elige el instalador o la edición portable para tu sistema. Las descargas se obtienen de los releases oficiales de Luma en GitHub.</p>
-      <h3>Última versión estable</h3>
-      <div id="descargas-estables" class="download-grid" aria-live="polite"><p>Cargando archivos…</p></div>
-      <details><summary>Versiones portables · historial de versiones</summary>
-        <label class="preview-toggle"><input type="checkbox" id="incluir-previas"> Mostrar también versiones preliminares</label>
-        <div id="historial" aria-live="polite"><p>Cargando versiones…</p></div>
-      </details>
-      <p id="estado-descargas" class="fine" role="status"></p>
-      <p><a href="https://github.com/Fernanboom34/Launcher/releases">Ver todos los releases en GitHub</a></p>
-      <noscript>Activa JavaScript para detectar tu sistema y ver los archivos aquí, o elige una versión en GitHub.</noscript>
-    </section>
-
-    <section id="instalar" aria-labelledby="t-instalar">
-      <h2 id="t-instalar">Instala Luma en tu equipo</h2>
-      <h3>Windows x64</h3>
-      <ol>
-        <li>Descarga <strong>Luma-Setup.exe</strong> con el botón de arriba y ábrelo.</li>
-        <li>Si Windows muestra <em>Windows protegió su PC</em>, pulsa <strong>Más información</strong> y luego <strong>Ejecutar de todas formas</strong>.</li>
-        <li>Permite la solicitud de administrador del instalador. El instalador copia Luma a Program Files.</li>
-      </ol>
-      <p class="fine">Ese aviso aparece porque las versiones de Luma todavía no tienen firma de editor público. Puede aparecer mientras el proyecto obtiene su firma de editor. Descarga siempre desde esta página o desde el <a href="https://github.com/Fernanboom34/Launcher/releases/latest">release oficial</a>.</p>
-      <p class="fine">Para comprobar que tu archivo es el publicado, calcula su hash en PowerShell y compáralo con <a href="https://github.com/Fernanboom34/Launcher/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>:</p>
-      <pre><code>Get-FileHash -Algorithm SHA256 .\Luma-Setup.exe</code></pre>
-      <h3>Linux x64</h3>
-      <p>En Debian o Ubuntu, descarga el paquete <code>.deb</code> e instálalo con tu gestor de paquetes. Para instalar por usuario, extrae el <code>.tar.gz</code> y ejecuta <code>./install.sh</code> dentro de esa carpeta. Requiere un escritorio X11 o Wayland y OpenGL 3.3.</p>
-    </section>
-    <section id="apoyar" class="support" aria-labelledby="t-apoyar">
-      <div class="support-intro">
-        <p class="eyebrow">Apoya un proyecto independiente</p>
-        <h2 id="t-apoyar">Invítame un café</h2>
-        <p>Luma es gratuito. Si te gusta el proyecto y quieres apoyar su desarrollo, puedes invitarme un café. Tu apoyo es voluntario y ayuda a seguir mejorándolo.</p>
-        <div class="support-widget">
-          <script src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script>
-          <script>kofiwidget2.init('Apoyar en Ko-fi', '#81e8b5', 'N4N01US8X2'); kofiwidget2.draw();</script>
-          <noscript><a class="btn" href="https://ko-fi.com/fernanboom34">Apoyar en Ko-fi</a></noscript>
-        </div>
-      </div>
-      <div class="support-embed">
-        <iframe id="kofiframe" src="https://ko-fi.com/fernanboom34/?hidefeed=true&amp;widget=true&amp;embed=true&amp;preview=true" height="600" loading="lazy" title="Apoyar el desarrollo de Luma en Ko-fi"></iframe>
+    <section class="explore" aria-labelledby="t-explorar">
+      <h2 id="t-explorar">Explora Luma</h2>
+      <div class="site-cards">
+        <a href="descargas.html"><h3>Descargas</h3><p>Instaladores, portables y versiones anteriores.</p><span>Elegir versión →</span></a>
+        <a href="capturas.html"><h3>Así se ve</h3><p>Biblioteca, instancias, loaders y el juego en marcha.</p><span>Ver capturas →</span></a>
+        <a href="ayuda.html"><h3>Ayuda</h3><p>Requisitos, instalación y verificación de archivos.</p><span>Consultar la guía →</span></a>
       </div>
     </section>
   </main>
-
   <footer>
-    <p><a href="https://github.com/Fernanboom34/Launcher">Código en GitHub</a> · <a href="https://github.com/Fernanboom34/Launcher/releases/latest">Novedades de la versión</a></p>
-    <p>Luma es software gratuito para perfiles offline. Esta es su única página oficial y original.</p>
+    <p><a href="aviso-legal.html">Aviso legal y derechos</a> · <a href="ayuda.html">Ayuda y contacto</a> · <a href="https://github.com/Fernanboom34/Launcher">Repositorio del launcher</a> · <a href="https://github.com/Fernanboom34/Launcher/releases/latest">Novedades</a></p>
+    <p>© 2026 Fernanboom34. Todos los derechos reservados sobre este sitio web.</p>
+    <p>Luma es gratuito y para perfiles offline. Este es su único sitio oficial y original.</p>
     <p>Proyecto independiente, sin afiliación con Mojang ni Microsoft. Minecraft es una marca de sus respectivos titulares.</p>
   </footer>
 </div>

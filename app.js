@@ -46,28 +46,31 @@ function renderHistory() {
   }
   if (!container.children.length) container.textContent = 'No hay versiones portables disponibles.';
 }
-document.getElementById('incluir-previas').addEventListener('change', renderHistory);
+document.getElementById('incluir-previas')?.addEventListener('change', renderHistory);
 async function loadLatest() {
   try {
     const release = await request(`${API}/latest`);
     if (release.draft || release.prerelease) throw new Error('No es una versión estable');
     const assets = release.assets.filter(a => kind(a));
     const container = document.getElementById('descargas-estables');
-    container.replaceChildren(...assets.map(a => assetLink(a, kind(a))));
-    if (!assets.length) container.textContent = 'Consulta los archivos de esta versión en GitHub.';
+    if (container) {
+      container.replaceChildren(...assets.map(a => assetLink(a, kind(a))));
+      if (!assets.length) container.textContent = 'Consulta los archivos de esta versión en GitHub.';
+    }
     const preferred = compatible && (assets.find(a => kind(a).os === system && (system === 'windows' ? /Setup/i.test(a.name) : /\.tar\.gz$/i.test(a.name))) || assets.find(a => kind(a).os === system));
     if (preferred) {
       button.href = assetLink(preferred, kind(preferred)).href;
       button.textContent = `Descargar para ${system === 'windows' ? 'Windows' : 'Linux'} x64`;
     } else {
-      button.href = '#descargas';
+      button.href = 'descargas.html#descargas';
       button.textContent = 'Ver descargas disponibles';
     }
     document.getElementById('compatibilidad').textContent = preferred ? `${kind(preferred).label}. Puedes elegir otro formato en Otras descargas.` : 'Disponible para Windows x64 y Linux x64. Si usas macOS, móvil o ARM, no hay un paquete compatible publicado.';
     version.textContent = `Versión estable ${release.tag_name.replace(/^v/, '')}`;
   } catch {
     version.textContent = 'Consulta la última versión estable en GitHub';
-    document.getElementById('descargas-estables').textContent = 'No se pudieron consultar los archivos. Usa el enlace a los releases oficiales.';
+    const container = document.getElementById('descargas-estables');
+    if (container) container.textContent = 'No se pudieron consultar los archivos. Usa el enlace a los releases oficiales.';
   }
 }
 async function loadHistory() {
@@ -84,5 +87,17 @@ async function loadHistory() {
     status.textContent = 'GitHub no está disponible temporalmente o alcanzó su límite de consultas. Los enlaces oficiales siguen disponibles.';
   }
 }
-loadLatest();
-loadHistory();
+// Conserva los enlaces compartidos de la antigua página única.
+const legacyPages = {
+  '#capturas': 'capturas.html',
+  '#descargas': 'descargas.html',
+  '#instalar': 'ayuda.html',
+  '#apoyar': 'apoyar.html'
+};
+const legacyTarget = /\/(?:index\.html)?$/.test(location.pathname) && legacyPages[location.hash];
+if (legacyTarget) {
+  location.replace(legacyTarget + location.hash);
+} else {
+  if (button) loadLatest();
+  if (document.getElementById('historial')) loadHistory();
+}
